@@ -3,6 +3,13 @@ import Router from 'vue-router'
 import EventCreate from './views/EventCreate.vue'
 import EventList from './views/EventList.vue'
 import EventShow from './views/EventShow.vue'
+import MyProject from './views/MyProject.vue'
+import GunShow from './views/GunShow.vue'
+import GunList from './views/GunList.vue'
+import Vueflix from './views/Vueflix.vue'
+import MovieDetails from './components/MovieDetails.vue'
+import MovieTrailer from './components/MovieTrailer.vue'
+import NewReleases from './components/NewReleases.vue'
 import NProgress from 'nprogress'
 import store from '@/store/store'
 import NotFound from './views/NotFound.vue'
@@ -20,9 +27,44 @@ const router = new Router({
       props: true
     },
     {
+      path: '/vueflix',
+      name: 'vueflix',
+      component: Vueflix
+    },
+    {
+      path: '/my-project',
+      name: 'my-project',
+      component: MyProject
+    },
+    {
+      path: '/vueflix/:id',
+      name: 'vueflix-movie',
+      component: MovieDetails
+    },
+    {
+      path: '/vueflix/newreleases',
+      name: 'vueflix-release',
+      component: NewReleases
+    },
+    {
+      path: '/vueflix/:id/trailer',
+      name: 'vueflix-trailer',
+      component: MovieTrailer
+    },
+    {
       path: '/event/create',
       name: 'event-create',
       component: EventCreate
+    },
+    {
+      path: '/event/guns',
+      name: 'guns',
+      component: GunShow
+    },
+    {
+      path: '/event/gun-list',
+      name: 'gun-list',
+      component: GunList
     },
     {
       path: '/event/:id',

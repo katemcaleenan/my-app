@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style>
+.app-wdith {
+  width: 800px;
+}
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -32,7 +35,7 @@ body {
 }
 #app {
   box-sizing: border-box;
-  width: 500px;
+  /* width: 500px; */
   padding: 0 20px 20px;
   margin: 0 auto;
 }

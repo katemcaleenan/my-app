@@ -19,5 +19,8 @@ export default {
   },
   postEvent(event) {
     return apiClient.post('/events', event)
+  },
+  updateEvent(event) {
+    return apiClient.patch('/events/' + event.id, event) //makes the call to the api client to update the specific event and with the 'event' data
   }
 }
