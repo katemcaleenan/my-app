@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './../node_modules/bulma/css/bulma.css'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import App from './App.vue'
@@ -6,9 +7,6 @@ import router from './router'
 import store from './store/store'
 import 'nprogress/nprogress.css'
 import Vuelidate from 'vuelidate'
-import DateFilter from './filters/date'
-
-Vue.filter('date', DateFilter)
 
 Vue.use(Vuelidate)
 
@@ -31,6 +29,15 @@ requireComponent.keys().forEach(fileName => {
 })
 
 new Vue({
+  data: {
+    premium: true,
+    cart: []
+  },
+  methods: {
+    updateCart(id) {
+      this.cart.push(id)
+    }
+  },
   router,
   store,
   render: h => h(App)
